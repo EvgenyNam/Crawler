@@ -1,16 +1,19 @@
 import requests
 
-# conn = httplib.HTTPConnection("www.google.com")
-# conn.request("GET","/index.html")
-# res = conn.getresponse()
-# print(res.read())
-# print res.status, res.reason
-
 #
 # Perform custom google search with low level criteria and have a crawler filter it out
 #
+class Object(object):
+    pass
 
 class Http:
-	def getRequest(self, url):
-		resp = requests.get(url)
-		return resp
+    def getRequest(self, url):
+        try:
+            resp = requests.get(url)
+
+            return resp
+        except:
+            errorObj = Object()
+            errorObj.status_code = 404
+
+        return errorObj
