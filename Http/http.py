@@ -1,4 +1,3 @@
-import httplib
 import requests
 
 # conn = httplib.HTTPConnection("www.google.com")
@@ -7,11 +6,11 @@ import requests
 # print(res.read())
 # print res.status, res.reason
 
+#
+# Perform custom google search with low level criteria and have a crawler filter it out
+#
+
 class Http:
 	def getRequest(self, url):
 		resp = requests.get(url)
 		return resp
-
-http = Http()
-resp = http.getRequest('http://www.google.com')
-print(resp.text)
