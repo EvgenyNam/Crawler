@@ -6,6 +6,7 @@ class Object(object):
 class Http:
     def getRequest(self, url):
         try:
+            print('making request to {}'.format(url))
             resp = requests.get(url)
             return resp
         except:
